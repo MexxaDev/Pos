@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#ticket {
+  width: 80mm;
+  margin: auto;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.center {
+  text-align: center;
+}
+
+.line {
+  border-top: 1px dashed #000;
+  margin: 6px 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+}

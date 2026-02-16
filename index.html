@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>POS Venta</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#CFE9F6">
+
+</head>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Levitar PWA activa"))
+    .catch(err => console.log("Error SW:", err));
+}
+</script>
+
+<body>
+
+  <header class="top-bar">
+    <svg id="toggleTheme" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-brightness"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-9 1.732a8 8 0 0 0 4.001 14.928l-.001 -16a8 8 0 0 0 -4 1.072" /></svg>
+    <div>
+      <label>Evento</label>
+      <input type="text" value="GG BEACH HOUSE" disabled>
+    </div>
+    <div>
+      <label>Barra</label>
+      <input type="text" value="Cajero : 1" disabled>
+    </div>
+    <img src="logo.png" width="150px" alt="">
+  </header>
+
+  <section class="stats">
+    <div class="stat-box">
+      <span>Items</span>
+      <strong id="statItems">0</strong>
+    </div>
+    <div class="stat-box">
+      <span>Cantidad total</span>
+      <strong id="statCantidad">0</strong>
+    </div>
+    <div class="stat-box">
+      <span>Total</span>
+      <strong id="statTotal">$0</strong>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- TABLA -->
+    <section class="tabla">
+      <div class="tabla-header">
+        <span>PRODUCTO</span>
+        <span>CODIGO</span>
+        <span>PRECIO</span>
+        <span>CANT</span>
+        <span>TOTAL</span>
+        <span>ACCIONES</span>
+      </div>
+
+      <div id="tablaBody"></div>
+    </section>
+
+    <!-- PANEL DERECHO -->
+    <aside class="panel">
+      <h3>Agregar producto</h3>
+
+      <label>Código del producto</label>
+      <input type="text" id="codigoInput" placeholder="agua, fernet, coca">
+
+      <label>Cantidad</label>
+      <input type="number" id="cantidadInput" value="1" min="1">
+
+      <button id="btnAgregar">+ AGREGAR</button>
+
+      <hr>
+
+      <div class="medio-pago">
+        <label>Medio de pago</label>
+        <select id="medioPago">
+          <option value="Efectivo">Efectivo</option>
+          <option value="Transferencia">Transferencia</option>
+        </select>
+      </div>
+   <hr>
+      <button id="btnImprimir">🖨 Imprimir</button>
+      <button id="btnLimpiar" class="danger">Limpiar</button>
+      <hr>
+      <button id="btnWhatsapp" class="cierre">📲 Enviar caja por Whtatsapp</button>
+        <button id="btnCerrarCaja" class="cierre">🔒 Cerrar Caja</button>
+    </aside>
+
+
+  </main>
+
+  <!-- TICKET OCULTO PARA IMPRESIÓN -->
+
+
+  <script src="app.js"></script>
+
+  <!-- TICKET OCULTO PARA IMPRESIÓN -->
+  <div id="ticket-print"></div>
+
+
+</body>
+
+</html>
