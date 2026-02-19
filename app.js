@@ -9,11 +9,53 @@ fetch("productos.json")
   .then(data => {
     productos = data;
     console.log("Productos cargados:", productos);
+    renderProductos();
   })
   .catch(err => {
     console.error("Error cargando productos:", err);
     alert("No se pudieron cargar los productos");
   });
+
+function renderProductos() {
+  const container = document.getElementById("productosContainer");
+  container.innerHTML = "";
+
+  Object.values(productos).forEach(producto => {
+
+    const card = document.createElement("div");
+    card.className = "producto-card";
+
+    card.innerHTML = `
+      <img src="${producto.imagen}" alt="${producto.nombre}">
+      <div class="producto-nombre">${producto.nombre}</div>
+      <div class="producto-precio">$${producto.precio}</div>
+    `;
+
+    card.addEventListener("click", () => {
+      agregarDesdeCard(producto.codigo);
+    });
+
+    container.appendChild(card);
+  });
+}
+function agregarDesdeCard(codigo) {
+  const producto = productos[codigo];
+
+  const existente = carrito.find(p => p.codigo === codigo);
+
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({
+      nombre: producto.nombre,
+      codigo: producto.codigo,
+      precio: producto.precio,
+      cantidad: 1
+    });
+  }
+
+  renderCarrito();
+}
 
 /**********************
  * ESTADO
@@ -99,7 +141,7 @@ function renderCarrito() {
       <span>$${item.precio}</span>
       <span>${item.cantidad}</span>
       <span>$${subtotal}</span>
-      <span class="trash" onclick="eliminarProducto(${index})">🗑</span>
+      <span class="trash" onclick="eliminarProducto(${index})"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg></span>
     `;
 
     tablaBody.appendChild(row);
@@ -194,6 +236,8 @@ function imprimirTicket() {
   }
 
   const fecha = new Date().toLocaleString();
+  const medioPago = medioPagoSelect.value;
+
   const total = carrito.reduce(
     (acc, item) => acc + item.precio * item.cantidad,
     0
@@ -202,18 +246,22 @@ function imprimirTicket() {
   const ticketDiv = document.getElementById("ticket-print");
 
   let html = `
-    <div>
-    <br>
-      <div class="left">GG BEACH HOUSE</div>
-      <p class="left">Costanera Este - Santa Fe</p>
-      <p>Fecha: ${fecha}</p>  
+    <div class="ticket-container">
+      <div class="center"><strong>GG BEACH HOUSE</strong></div>
+      <div class="center">Costanera Este - Santa Fe</div>
+      <div class="ticket-line"></div>
+      <div>Fecha: ${fecha}</div>
+      <div>Pago: ${medioPago}</div>
+      <div class="ticket-line"></div>
   `;
 
   carrito.forEach(item => {
+    const subtotal = item.precio * item.cantidad;
+
     html += `
       <div class="ticket-item">
-        <span>${item.nombre} x${item.cantidad} &nbsp;</span>
-        <span>$${item.precio * item.cantidad}</span>
+        <span>${item.nombre} x${item.cantidad}</span>
+        <span>$${subtotal}</span>
       </div>
     `;
   });
@@ -221,34 +269,28 @@ function imprimirTicket() {
   html += `
       <div class="ticket-line"></div>
       <div class="ticket-total">
-        <br>
-        <p>----------</p>
         <span>TOTAL</span>
         <span>$${total}</span>
-        <p>----------</p>
-
       </div>
-      <br>
-      &nbsp;
-      <p>Gracias por su compra &nbsp;</p>
-      <br>
+      <div class="ticket-line"></div>
+      <div class="center">Gracias por su compra</div>
     </div>
   `;
 
   ticketDiv.innerHTML = html;
+
   window.print();
 
   setTimeout(() => {
     ticketDiv.innerHTML = "";
   }, 500);
 
-  // Guardamos la venta **solo una vez antes de limpiar el carrito**
   guardarVenta(fecha);
 
-  // Limpiamos el carrito
   carrito = [];
   renderCarrito();
 }
+
 
 /**********************
  * GUARDAR VENTA

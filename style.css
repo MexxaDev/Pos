@@ -47,7 +47,7 @@ body.dark {
 
 * {
   box-sizing: border-box;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 body {
@@ -136,7 +136,7 @@ body {
 /* Tabla */
 
 .tabla {
-  flex: 3;
+  flex: 2;
   min-width: 300px;
   background: var(--card);
   border-radius: 18px;
@@ -319,4 +319,128 @@ body {
 }
 #btnAgregar:active {
   transform: scale(0.97);
+}
+
+/* =========================
+   TICKET IMPRESIÓN DEFINITIVO
+========================= */
+
+#ticket-print {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+}
+
+/* SOLO IMPRIMIR EL TICKET */
+@media print {
+
+  body {
+    margin: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #ticket-print,
+  #ticket-print * {
+    visibility: visible;
+  }
+
+  #ticket-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 58mm; /* cambiar a 80mm si tu impresora es 80 */
+    padding: 5mm;
+    font-family: monospace;
+    font-size: 12px;
+    color: #000;
+    background: #fff;
+  }
+
+  .ticket-item,
+  .ticket-total {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ticket-line {
+    border-top: 1px dashed #000;
+    margin: 5px 0;
+  }
+
+  .ticket-total {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  @page {
+    margin: 0;
+  }
+}
+/* =========================
+   PRODUCTOS SCROLL HORIZONTAL
+========================= */
+
+.productos-scroll {
+  padding: 30px 40px 40px;
+  width: 100%;
+}
+
+.productos-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.productos-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.productos-container::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* Card producto */
+
+.producto-card {
+  min-width: 180px;
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.producto-nombre {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.producto-precio {
+  font-size: 18px;
+  font-weight: 600;
 }

@@ -1,82 +1,68 @@
 {
-  "fernet": {
-    "nombre": "Fernet Branca",
-    "codigo": "fernet",
-    "precio": 10000
-  },
-  "fernet2x": {
-    "nombre": "Fernet Branca 2x",
-    "codigo": "fernet2x",
-    "precio": 18000
-  },
-  "gin": {
-    "nombre": "Gin Herederos",
-    "codigo": "gin",
-    "precio": 10000
-  },
-  "gin2x": {
-    "nombre": "Gin Herederos 2x",
-    "codigo": "gin2x",
-    "precio": 18000
-  },
-  "smirnoff": {
-    "nombre": "Smirnoff",
-    "codigo": "smirnoff",
-    "precio": 10000
-  },
-  "smirnoff2x": {
-    "nombre": "Smirnoff 2x",
-    "codigo": "smirnoff2x",
-    "precio": 18000
-  },
-  "jagger": {
-    "nombre": "Jaggermeister",
-    "codigo": "jagger",
-    "precio": 14000
-  },
-  "jagger2x": {
-    "nombre": "Jaggermeister 2x",
-    "codigo": "jagger2x",
-    "precio": 25000
-  },
-  "absolut": {
-    "nombre": "Absolut",
-    "codigo": "absolut",
-    "precio": 14000
-  },
-  "absolut2x": {
-    "nombre": "Absolut 2x",
-    "codigo": "absolut2x",
-    "precio": 25000
-  },
   "agua": {
-    "nombre": "Agua 500ml",
     "codigo": "agua",
-    "precio": 5000
+    "nombre": "Agua 500ml",
+    "precio": 5000,
+    "imagen": "agua.png"
   },
-  "gaseosa": {
-    "nombre": "Gaseosa 500ml",
-    "codigo": "gaseosa",
-    "precio": 5000
+  "fernet": {
+    "codigo": "fernet",
+    "nombre": "Fernet Branca",
+    "precio": 10000,
+    "imagen": "img/fernet.png"
   },
-  "jugo": {
-    "nombre": "Jugo",
-    "codigo": "jugo",
-    "precio": 5000
+  "coca": {
+    "codigo": "coca",
+    "nombre": "Coca Cola",
+    "precio": 6000,
+    "imagen": "img/coca.png"
   },
-  "redbull": {
-    "nombre": "Red Bull",
-    "codigo": "redbull",
-    "precio": 6000
+    "aguad": {
+    "codigo": "agua",
+    "nombre": "Agua 500ml",
+    "precio": 5000,
+    "imagen": "agua.png"
   },
-  "speed": {
-    "nombre": "Speed",
-    "codigo": "speed",
-    "precio": 5000
+    "fernetdd": {
+    "codigo": "fernet",
+    "nombre": "Fernet Branca",
+    "precio": 10000,
+    "imagen": "img/fernet.png"
   },
-  "lata": {
-    "nombre": "Cerveza Lata",
-    "codigo": "lata",
-    "precio": 5000
+  "cocaddz": {
+    "codigo": "coca",
+    "nombre": "Coca Cola",
+    "precio": 6000,
+    "imagen": "img/coca.png"
+  },
+    "cocaddc": {
+    "codigo": "coca",
+    "nombre": "Coca Cola",
+    "precio": 6000,
+    "imagen": "img/coca.png"
+  },
+    "cocaddx": {
+    "codigo": "coca",
+    "nombre": "Coca Cola",
+    "precio": 6000,
+    "imagen": "img/coca.png"
+  },
+    "aguadd": {
+    "codigo": "agua",
+    "nombre": "Agua 500ml",
+    "precio": 5000,
+    "imagen": "agua.png"
+  },
+  "fernetd": {
+    "codigo": "fernet",
+    "nombre": "Fernet Branca",
+    "precio": 10000,
+    "imagen": "img/fernet.png"
+  },
+  "cocad": {
+    "codigo": "coca",
+    "nombre": "Coca Cola",
+    "precio": 6000,
+    "imagen": "img/coca.png"
   }
 }
