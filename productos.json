@@ -3,7 +3,7 @@
     "codigo": "agua",
     "nombre": "Agua 500ml",
     "precio": 5000,
-    "imagen": "img/agua.png"
+    "imagen": "agua.png"
   },
   "jugo_gaseosa": {
     "codigo": "jugo_gaseosa",
@@ -15,13 +15,13 @@
     "codigo": "speed",
     "nombre": "Speed",
     "precio": 5000,
-    "imagen": "img/speed.png"
+    "imagen": "speed.png"
   },
   "cerveza": {
     "codigo": "cerveza",
     "nombre": "Cerveza",
     "precio": 6000,
-    "imagen": "img/cerveza.png"
+    "imagen": "lata2.webp"
   },
   "fernet": {
     "codigo": "fernet",
