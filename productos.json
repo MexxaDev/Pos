@@ -1,69 +1,57 @@
 {
   "agua": {
     "codigo": "agua",
-    "nombre": "Agua",
-    "precio": 4000,
-    "imagen": "agua.png"
+    "nombre": "Agua 500ml",
+    "precio": 5000,
+    "imagen": "img/agua.png"
   },
-  "jugo": {
-    "codigo": "jugo",
+  "jugo_gaseosa": {
+    "codigo": "jugo_gaseosa",
     "nombre": "Jugo / Gaseosa",
-    "precio": 4000,
-    "imagen": "jugo.png"
+    "precio": 5000,
+    "imagen": "img/jugo_gaseosa.png"
   },
   "speed": {
     "codigo": "speed",
     "nombre": "Speed",
-    "precio": 4000,
-    "imagen": "speed.png"
+    "precio": 5000,
+    "imagen": "img/speed.png"
   },
   "cerveza": {
     "codigo": "cerveza",
-    "nombre": "Cerveza Santa Fe",
-    "precio": 5000,
-    "imagen": "santafe.jpg"
-  },
-  "heineken": {
-    "codigo": "heineken",
-    "nombre": "Cerveza Heineken",
+    "nombre": "Cerveza",
     "precio": 6000,
-    "imagen": "lata2.webp"
+    "imagen": "img/cerveza.png"
   },
-  "branca": {
-    "codigo": "branca",
-    "nombre": "Branca",
-    "precio": 8000,
-    "imagen": "jugo.png"
-  },
-  "vodka": {
-    "codigo": "vodka",
-    "nombre": "Vodka",
-    "precio": 8000,
-    "imagen": "vodka.webp"
+  "fernet": {
+    "codigo": "fernet",
+    "nombre": "Fernet Branca",
+    "precio": 10000,
+    "imagen": "img/fernet.png"
   },
   "gin": {
     "codigo": "gin",
     "nombre": "Gin",
-    "precio": 8000,
-    "imagen": "gin.webp"
+    "precio": 10000,
+    "imagen": "img/gin.png"
   },
-  "cynar": {
-    "codigo": "cynar",
-    "nombre": "Cynar",
-    "precio": 8000,
-    "imagen": "cynar.png"
+  "vodka": {
+    "codigo": "vodka",
+    "nombre": "Vodka",
+    "precio": 10000,
+    "imagen": "img/vodka.png"
   },
-  "jagger": {
-    "codigo": "jagger",
+  "jagermeister": {
+    "codigo": "jagermeister",
     "nombre": "Jägermeister",
-    "precio": 13000,
-    "imagen": "jagger.jpg"
+    "precio": 15000,
+    "imagen": "img/jagermeister.png"
   },
   "absolut": {
     "codigo": "absolut",
     "nombre": "Absolut",
-    "precio": 13000,
-    "imagen": "absolute.webp"
+    "precio": 15000,
+    "imagen": "img/absolut.png"
   },
   "chandon": {
     "codigo": "chandon",
@@ -71,40 +59,52 @@
     "precio": 30000,
     "imagen": "img/chandon.png"
   },
-  "promo_blanca": {
-    "codigo": "promo_blanca",
-    "nombre": "Promo 2x Blanca",
-    "precio": 15000,
-    "imagen": "img/promo_blanca.png"
+  "promo_2x_branca": {
+    "codigo": "promo_2x_branca",
+    "nombre": "Promo 2x Branca",
+    "precio": 18000,
+    "imagen": "img/promo_2x_branca.png"
   },
-  "promo_jagger": {
-    "codigo": "promo_jagger",
+  "promo_2x_jager": {
+    "codigo": "promo_2x_jager",
     "nombre": "Promo 2x Jägermeister",
-    "precio": 23000,
-    "imagen": "img/promo_jagger.png"
+    "precio": 24000,
+    "imagen": "img/promo_2x_jager.png"
   },
-  "promo_absolut": {
-    "codigo": "promo_absolut",
+  "promo_2x_absolut": {
+    "codigo": "promo_2x_absolut",
     "nombre": "Promo 2x Absolut",
-    "precio": 23000,
-    "imagen": "img/promo_absolut.png"
+    "precio": 24000,
+    "imagen": "img/promo_2x_absolut.png"
+  },
+  "promo_2x_gin": {
+    "codigo": "promo_2x_gin",
+    "nombre": "Promo 2x Gin",
+    "precio": 18000,
+    "imagen": "img/promo_2x_gin.png"
   },
   "barco_vodka": {
     "codigo": "barco_vodka",
     "nombre": "Barco de Vodka",
-    "precio": 40000,
+    "precio": 45000,
     "imagen": "img/barco_vodka.png"
   },
   "barco_absolut": {
     "codigo": "barco_absolut",
     "nombre": "Barco Absolut",
-    "precio": 80000,
+    "precio": 90000,
     "imagen": "img/barco_absolut.png"
   },
-  "barco_jagger": {
-    "codigo": "barco_jagger",
+  "barco_jager": {
+    "codigo": "barco_jager",
     "nombre": "Barco Jägermeister",
-    "precio": 90000,
-    "imagen": "img/barco_jagger.png"
+    "precio": 100000,
+    "imagen": "img/barco_jager.png"
+  },
+  "hielo": {
+    "codigo": "hielo",
+    "nombre": "Hielo",
+    "precio": 2000,
+    "imagen": "img/hielo.png"
   }
 }
